@@ -3,10 +3,17 @@ package com.db.trade.service;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import com.db.trade.exception.SignalDispatcherNotFoundException;
-
+/**
+ * Test class for the new trade app service
+ *
+ * @author Manoj
+ */
 
 class TradeAppServiceTest {
 
+	/**
+	 * Method to test valid signals
+	 */
 	@Test
 	void handleSignaltest_validSignals() {
 		
@@ -17,6 +24,9 @@ class TradeAppServiceTest {
 		
 	}
 
+	/**
+	 * Method to test invalid signals
+	 */
 	@Test
 	void handleSignaltest_invalidSignals() {
 		

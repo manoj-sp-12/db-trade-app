@@ -10,6 +10,12 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.db.trade.extern.Algo;
 
+/**
+ * Test class to test if all the required methods with the expected parameters
+ * are invoked in the SignalDispatcher1Imp2
+ *
+ * @author Manoj
+ */
 @ExtendWith(MockitoExtension.class)
 class SignalDispatcher2ImplTest {
 
@@ -19,11 +25,15 @@ class SignalDispatcher2ImplTest {
 	@InjectMocks
 	SignalDispatcher2Impl signalDispatcher2Impl;
 
+	/**
+	 * 
+	 * method to test if all the required methods for signalDispatcher2 is invoked
+	 */
 	@Test
-	void testMethodInvokation() {
-		
+	void testSignalDispatcher() {
+
 		signalDispatcher2Impl.execute();
-		
+
 		verify(algo).reverse();
 		verify(algo).setAlgoParam(1, 80);
 		verify(algo).submitToMarket();

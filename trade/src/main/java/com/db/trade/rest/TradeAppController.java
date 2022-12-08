@@ -13,8 +13,7 @@ import com.db.trade.extern.SignalHandler;
 import com.db.trade.service.TradeAppService;
 
 /**
- * Rest Controller - a single http endpoint for receiving and handling the
- * ‘signal’
+ * Rest Controller - receiving and handling the ‘signal’
  *
  * @author Manoj
  */
@@ -28,6 +27,11 @@ public class TradeAppController {
 		this.signalHandler = tradeAppService;
 	}
 
+	/**
+	 * Method to handle signal 
+	 * @param signalNum
+	 * @return
+	 */
 	@GetMapping(path="/signal/{signalNum}")
 	public ResponseEntity<String> handleSignal(@PathVariable int signalNum) {
 		signalHandler.handleSignal(signalNum);

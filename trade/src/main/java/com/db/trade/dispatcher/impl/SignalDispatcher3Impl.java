@@ -3,10 +3,18 @@ package com.db.trade.dispatcher.impl;
 import com.db.trade.dispatcher.SignalDispatcher;
 import com.db.trade.extern.Algo;
 
+/**
+ * This class specifies the code to execute when signal 3 is encountered
+ *
+ * @author Manoj
+ */
 public class SignalDispatcher3Impl implements SignalDispatcher {
 
 	private Algo algo;
-	
+
+	/**
+	 * code to execute for signal 3
+	 */
 	@Override
 	public void execute() {
 		// TODO Auto-generated method stub
@@ -15,10 +23,14 @@ public class SignalDispatcher3Impl implements SignalDispatcher {
 		algo.performCalc();
 		algo.submitToMarket();
 	}
-	
+
+	/**
+	 * set Algo object to signal dispatcher object
+	 * 
+	 * @param algo
+	 */
 	@Override
 	public void setAlgo(Algo algo) {
-		// TODO Auto-generated method stub
 		this.algo = algo;
 	}
 

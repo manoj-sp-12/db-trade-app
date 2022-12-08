@@ -13,7 +13,11 @@ import org.springframework.http.ResponseEntity;
 import com.db.trade.extern.SignalHandler;
 import com.db.trade.service.TradeAppService;
 
-
+/**
+ * Test class for the new trade app controller
+ *
+ * @author Manoj
+ */
 @ExtendWith(MockitoExtension.class)
 class TradeAppControllerTest {
 

@@ -17,7 +17,7 @@ import com.db.trade.extern.Algo;
 import com.db.trade.extern.SignalHandler;
 
 /**
- * New Trading application to handle signals.
+ * New Trading application service to handle signals.
  *
  * @author Manoj
  */
@@ -32,12 +32,21 @@ public class TradeAppService implements SignalHandler {
 		initApplication();
 	}
 
+	/**
+	 * Method to load the signalDispatcherMap with key-value pairs of signal and
+	 * corresponding signalDispatcher implementation objects
+	 */
 	private void initApplication() {
 		signalDispatcherMap.put(1, new SignalDispatcher1Impl());
 		signalDispatcherMap.put(2, new SignalDispatcher2Impl());
 		signalDispatcherMap.put(3, new SignalDispatcher3Impl());
 	}
 
+	/**
+	 * Method to handle a signal
+	 *
+	 *@param signal
+	 */
 	public void handleSignal(int signal) {
 		Algo algo = new Algo();
 		SignalDispatcher dispatcher = signalDispatcherMap.get(signal);
